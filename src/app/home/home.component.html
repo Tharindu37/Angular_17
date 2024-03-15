@@ -1,0 +1,43 @@
+<div>
+  <select (change)="changemodule($event)">
+    <option value="customer">Customer</option>
+    <option value="suppliers">Supplier</option>
+    <option value="user">User</option>
+  </select>
+  @if (modulename == "customer") {
+    <h2>Customer page</h2>
+    @for (
+      item of customerlist();
+      track item.id;
+      let inx=$index,
+  count=$count,first=$first,last=$last,even=$even
+    ) {
+      <h3>Count: {{ count }}</h3>
+      <h3>first: {{ first }}</h3>
+      <h3>last: {{ last }}</h3>
+      <h3>even: {{ even }}</h3>
+      <li>{{ inx }} - {{ item.name }}</li>
+    }
+  } @else if (modulename == "suppliers") {
+    <h2>Supplier page</h2>
+    @for (supplier of supplierlist(); track supplier) {
+    } @empty {
+      <p>No data</p>
+    }
+  } @else {
+    <h2>User page</h2>
+    @for (user of userlist(); track user.id) {
+      @switch (user.country) {
+        @case ("Sri Lanka") {
+          Sri Lanka is best country
+        }
+        @case ("India") {
+          India is good
+        }
+        @default {
+          Default
+        }
+      }
+    }
+  }
+</div>
