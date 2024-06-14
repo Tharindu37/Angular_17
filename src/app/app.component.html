@@ -1,2 +1,77 @@
-<h1>Welcome to Nihira Techiees</h1>
-<router-outlet></router-outlet>
+<h1>Welcome</h1>
+
+@defer {
+  <router-outlet></router-outlet>
+}
+
+<!-- @defer (on idle) {
+  <router-outlet></router-outlet>
+} -->
+
+<!-- @defer (on timer(1000ms)) {
+  <router-outlet></router-outlet>
+} -->
+
+<!-- @defer (on viewport) {
+  <router-outlet></router-outlet>
+} @placeholder {
+  <div>data is available soon...</div>
+} -->
+
+<!-- @defer (on timer(2000ms)) {
+  <router-outlet></router-outlet>
+} @placeholder {
+  <div>data is available soon...</div>
+} -->
+
+<!-- <h3 #interact>Interaction</h3> -->
+
+<!-- @defer (on interaction(interact)) {
+  <router-outlet></router-outlet>
+} @placeholder {
+  <div>data is available soon...</div>
+} -->
+
+<!-- @defer (on hover(interact)) {
+  <router-outlet></router-outlet>
+} @placeholder {
+  <div>data is available soon...</div>
+} -->
+
+<!-- @defer (on immediate) {
+  <router-outlet></router-outlet>
+} @placeholder {
+  <div>data is available soon...</div>
+} -->
+
+<button (click)="isloadcontent = !isloadcontent">Click</button>
+
+<!-- @defer (when isloadcontent) {
+  <router-outlet></router-outlet>
+} @placeholder (minimum 2s) {
+  <div>data is available soon...</div>
+} @loading (after 100ms; minimum 1s) {
+  <div>Loading...</div>
+} @error {
+  <div>Failed to load</div>
+} -->
+
+<!-- @defer (when isloadcontent; on timer(1000ms)) {
+  <router-outlet></router-outlet>
+} @placeholder {
+  <div>data is available soon...</div>
+} @loading (after 100ms; minimum 1s) {
+  <div>Loading...</div>
+} @error {
+  <div>Failed to load</div>
+} -->
+
+<!-- @defer (when isloadcontent; prefetch on idle) {
+  <router-outlet></router-outlet>
+} @placeholder {
+  <div>data is available soon...</div>
+} @loading (after 100ms; minimum 1s) {
+  <div>Loading...</div>
+} @error {
+  <div>Failed to load</div>
+} -->
