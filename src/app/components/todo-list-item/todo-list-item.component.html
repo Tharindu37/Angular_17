@@ -1,0 +1,18 @@
+<p>Title : {{ taskTitle }}</p>
+<button type="submit" [disabled]="formIsInvalid">Submit</button>
+<button [attr.data-test-id]="testId">Primary CTA</button>
+
+@if (isAdmin) {
+  <button>Erase Database</button>
+} @else {
+  <p>You are not authorized.</p>
+}
+
+<ul>
+  @for (ingredient of ingredientList; track ingredient.name) {
+    <li>{{ ingredient.quantity }} - {{ ingredient.name }}</li>
+  }
+</ul>
+<br /><br /><br />
+<button (click)="transformText($event)">Change</button>
+<p>{{ announcement }}</p>
